@@ -984,7 +984,7 @@ function sys_apt_sources_config_for_debian () {
 	echo "## [Worker] sys_apt_sources_config_for_debian"
 	echo "################################################################################"
 
-	echo "==== config apt soruces list using DEB822 format: /etc/apt/sources.list.d/ubuntu.sources ===="
+	echo "==== config apt soruces list using DEB822 format: /etc/apt/sources.list.d/debian.sources ===="
 
 	local target_debian_codename="\${TARGET_DEBIAN_CODENAME}"
 	local target_debian_mirror="\${TARGET_DEBIAN_MIRROR}"
@@ -1000,7 +1000,7 @@ function sys_apt_sources_config_for_debian () {
 
 	mkdir -p "/etc/apt/sources.list.d"
 
-cat << __EOF__ | tee "/etc/apt/sources.list.d/ubuntu.sources"
+cat << __EOF__ | tee "/etc/apt/sources.list.d/debian.sources"
 Types: deb
 URIs: \${target_debian_mirror}
 Suites: \${target_debian_codename}
