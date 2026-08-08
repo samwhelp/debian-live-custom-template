@@ -2364,7 +2364,7 @@ insmod gfxterm
 
 menuentry "${target_business_name} ${target_build_version} (${target_arch})" {
 	set gfxpayload=keep
-	linux /live/vmlinuz boot=live nopersistent ---
+	linux /live/vmlinuz boot=live ---
 	initrd /live/initrd.img
 }
 
