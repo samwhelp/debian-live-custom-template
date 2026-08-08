@@ -2086,8 +2086,8 @@ function sys_copy_system_kernel_to_isodir () {
 	echo cp -f "${distro_img_dir_path}/boot/vmlinuz-${kernel_version}" "${distro_iso_dir_path}/live/vmlinuz"
 	cp -f "${distro_img_dir_path}/boot/vmlinuz-${kernel_version}" "${distro_iso_dir_path}/live/vmlinuz"
 
-	echo cp -f "${distro_img_dir_path}/boot/initrd.img-${kernel_version}" "${distro_iso_dir_path}/live/initrd"
-	cp -f "${distro_img_dir_path}/boot/initrd.img-${kernel_version}" "${distro_iso_dir_path}/live/initrd"
+	echo cp -f "${distro_img_dir_path}/boot/initrd.img-${kernel_version}" "${distro_iso_dir_path}/live/initrd.img"
+	cp -f "${distro_img_dir_path}/boot/initrd.img-${kernel_version}" "${distro_iso_dir_path}/live/initrd.img"
 
 }
 
@@ -2365,7 +2365,7 @@ insmod gfxterm
 menuentry "${target_business_name} ${target_build_version} (${target_arch})" {
 	set gfxpayload=keep
 	linux /live/vmlinuz boot=live nopersistent ---
-	initrd /live/initrd
+	initrd /live/initrd.img
 }
 
 __EOF__
