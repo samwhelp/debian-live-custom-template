@@ -2579,7 +2579,7 @@ function sys_create_filesystem_manifest_desktop_to_isodir () {
 
 	cp -f "${distro_iso_dir_path}/live/filesystem.manifest" "${distro_iso_dir_path}/live/filesystem.manifest-desktop"
 
-	sed -i -E '/(casper|ubiquity|live|calamares|cloud-init)/Id' "${distro_iso_dir_path}/live/filesystem.manifest-desktop" || true
+	sed -i -E '/(live-boot|live-config|ubiquity|live|calamares|cloud-init)/Id' "${distro_iso_dir_path}/live/filesystem.manifest-desktop" || true
 
 }
 
