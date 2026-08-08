@@ -2072,7 +2072,7 @@ function sys_archive_isodir_to_isofile_via_xorriso () {
 	## let iso_volid to upper case
 	local iso_volid="${ISO_VOLID^^}"
 
-	local iso_publisher="ubuntu-live-custom-template"
+	local iso_publisher="debian-live-custom-template"
 
 
 	local distro_iso_dir_path="${DISTRO_ISO_DIR_PATH}"
