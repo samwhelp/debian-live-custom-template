@@ -975,7 +975,7 @@ __EOF__
 
 
 ##
-## ## Module / Apt Sources / Ubuntu
+## ## Module / Apt Sources / Debian
 ##
 
 function sys_apt_sources_config_for_debian () {
