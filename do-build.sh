@@ -904,7 +904,7 @@ function core_apt_sources_config () {
 
 	sys_apt_config_no_snap
 
-	sys_apt_sources_config_for_ubuntu
+	sys_apt_sources_config_for_debian
 
 }
 
@@ -978,10 +978,10 @@ __EOF__
 ## ## Module / Apt Sources / Ubuntu
 ##
 
-function sys_apt_sources_config_for_ubuntu () {
+function sys_apt_sources_config_for_debian () {
 
 	echo "################################################################################"
-	echo "## [Worker] sys_apt_sources_config_for_ubuntu"
+	echo "## [Worker] sys_apt_sources_config_for_debian"
 	echo "################################################################################"
 
 	echo "==== config apt soruces list using DEB822 format: /etc/apt/sources.list.d/ubuntu.sources ===="
