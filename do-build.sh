@@ -814,6 +814,21 @@ function util_load_list () {
 ## ## Module / Locale
 ##
 
+function sys_locale_load_list_from_str () {
+
+	local str="\${1}"
+	local list=""
+	local item=""
+	local node=""
+
+	for node in \${str}; do
+		item="\${node} UTF-8"$'\n'
+		list+="\${item}"
+	done
+
+	echo "\${list}"
+}
+
 function base_locale_init_locales () {
 
 	echo "################################################################################"
@@ -823,9 +838,12 @@ function base_locale_init_locales () {
 	echo "==== init locales ===="
 
 	local target_init_locales="\${TARGET_INIT_LOCALES}"
+	local target_list_locales="\$(sys_locale_load_list_from_str "\${target_init_locales}")"
 
-	echo locale-gen --lang \${target_init_locales}
-	locale-gen --lang \${target_init_locales}
+	echo -n "\${target_list_locales}" | tee "/etc/apt/apt.conf.d/99-enable-recommends" > /dev/null 2>&1
+
+	echo locale-gen
+	locale-gen
 
 }
 
