@@ -2239,8 +2239,8 @@ function sys_create_grub_cfg_to_isodir () {
 
 
 	##
-	## ## touch /ubuntu
-	## ## for search --set=root --file /ubuntu
+	## ## touch /debian
+	## ## for search --set=root --file /debian
 	##
 
 
