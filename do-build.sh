@@ -1173,11 +1173,9 @@ function live_debianlive_package_install () {
 	echo "==== install casper as live boot system ===="
 
 	local run_cmd="apt-get install -y --no-install-recommends
-		casper
-		discover
-		laptop-detect
-		os-prober
-		keyutils
+		live-boot
+		live-config
+		live-config-systemd
 	"
 
 	echo \${run_cmd}
