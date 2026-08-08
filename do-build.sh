@@ -1170,7 +1170,7 @@ function live_debianlive_package_install () {
 	echo "## [Worker] live_debianlive_package_install"
 	echo "################################################################################"
 
-	echo "==== install casper as live boot system ===="
+	echo "==== install live-boot and live-config as live boot system ===="
 
 	local run_cmd="apt-get install -y --no-install-recommends
 		live-boot
