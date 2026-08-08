@@ -1065,8 +1065,8 @@ function kernel_main_package_install () {
 	echo "==== install kernel package ===="
 
 	local run_cmd="apt-get install -y --no-install-recommends
-		linux-generic
-		linux-firmware
+		linux-image-amd64
+		linux-headers-amd64
 		thermald
 		zstd
 	"
