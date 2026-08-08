@@ -986,8 +986,8 @@ function sys_apt_sources_config_for_ubuntu () {
 
 	echo "==== config apt soruces list using DEB822 format: /etc/apt/sources.list.d/ubuntu.sources ===="
 
-	local target_ubuntu_codename="\${TARGET_DEBIAN_CODENAME}"
-	local target_ubuntu_mirror="\${TARGET_DEBIAN_MIRROR}"
+	local target_debian_codename="\${TARGET_DEBIAN_CODENAME}"
+	local target_debian_mirror="\${TARGET_DEBIAN_MIRROR}"
 
 
 	if [ -f "/etc/apt/sources.list" ]; then
@@ -1002,26 +1002,26 @@ function sys_apt_sources_config_for_ubuntu () {
 
 cat << __EOF__ | tee "/etc/apt/sources.list.d/ubuntu.sources"
 Types: deb
-URIs: \${target_ubuntu_mirror}
-Suites: \${target_ubuntu_codename}
+URIs: \${target_debian_mirror}
+Suites: \${target_debian_codename}
 Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 Types: deb
-URIs: \${target_ubuntu_mirror}
-Suites: \${target_ubuntu_codename}-updates
+URIs: \${target_debian_mirror}
+Suites: \${target_debian_codename}-updates
 Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 Types: deb
-URIs: \${target_ubuntu_mirror}
-Suites: \${target_ubuntu_codename}-security
+URIs: \${target_debian_mirror}
+Suites: \${target_debian_codename}-security
 Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 Types: deb
-URIs: \${target_ubuntu_mirror}
-Suites: \${target_ubuntu_codename}-backports
+URIs: \${target_debian_mirror}
+Suites: \${target_debian_codename}-backports
 Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 __EOF__
@@ -1762,9 +1762,9 @@ function sys_create_core_system () {
 	echo "==== create core system via debootstrap ===="
 
 	local target_arch="${TARGET_ARCH}"
-	local target_ubuntu_codename="${TARGET_DEBIAN_CODENAME}"
+	local target_debian_codename="${TARGET_DEBIAN_CODENAME}"
 	local distro_img_dir_path="${DISTRO_IMG_DIR_PATH}"
-	local target_ubuntu_mirror="${TARGET_DEBIAN_MIRROR}"
+	local target_debian_mirror="${TARGET_DEBIAN_MIRROR}"
 	local debootstrap_script_file_path="${DEBOOTSTRAP_SCRIPT_FILE_PATH}"
 
 
@@ -1773,9 +1773,9 @@ function sys_create_core_system () {
 		--variant=minbase
 		--components=main,universe,restricted,multiverse
 		--include=ca-certificates,openssl,console-setup-linux,console-setup,locales,tzdata,whiptail,wget,dbus,gnupg
-		${target_ubuntu_codename}
+		${target_debian_codename}
 		${distro_img_dir_path}
-		${target_ubuntu_mirror}
+		${target_debian_mirror}
 		${debootstrap_script_file_path}
 	"
 
