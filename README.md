@@ -1,6 +1,6 @@
 
 
-# ubuntu-live-custom-template
+# debian-live-custom-template
 
 
 
@@ -9,7 +9,7 @@
 
 | Link | GitHub |
 | ---- | ------ |
-| [ubuntu-live-custom-template](https://samwhelp.github.io/ubuntu-live-custom-template/) | [GitHub](https://github.com/samwhelp/ubuntu-live-custom-template) |
+| [debian-live-custom-template](https://samwhelp.github.io/debian-live-custom-template/) | [GitHub](https://github.com/samwhelp/debian-live-custom-template) |
 
 
 
@@ -27,11 +27,11 @@
 
 | Respin |
 | ------ |
-| [ubuntu-live-custom-respin-base](https://github.com/samwhelp/ubuntu-live-custom-respin-base) |
-| [ubuntu-live-custom-respin-xfce](https://github.com/samwhelp/ubuntu-live-custom-respin-xfce) |
-| [ubuntu-live-custom-respin-kde-plasma](https://github.com/samwhelp/ubuntu-live-custom-respin-kde-plasma) |
-| [ubuntu-live-custom-respin-cinnamon](https://github.com/samwhelp/ubuntu-live-custom-respin-cinnamon) |
-| [ubuntu-live-custom-respin-mate](https://github.com/samwhelp/ubuntu-live-custom-respin-mate) |
+| [debian-live-custom-respin-base](https://github.com/samwhelp/debian-live-custom-respin-base) |
+| [debian-live-custom-respin-xfce](https://github.com/samwhelp/debian-live-custom-respin-xfce) |
+| [debian-live-custom-respin-kde-plasma](https://github.com/samwhelp/debian-live-custom-respin-kde-plasma) |
+| [debian-live-custom-respin-cinnamon](https://github.com/samwhelp/debian-live-custom-respin-cinnamon) |
+| [debian-live-custom-respin-mate](https://github.com/samwhelp/debian-live-custom-respin-mate) |
 
 
 
@@ -66,8 +66,8 @@ sudo passwd -d $(whoami)
 
 | Link | GitHub |
 | ---- | ------ |
-| [ubuntu-iso-builder-template](https://samwhelp.github.io/ubuntu-iso-builder-template/) | [GitHub](https://github.com/samwhelp/ubuntu-iso-builder-template) |
-| [Ubuntu Adjustment](https://samwhelp.github.io/ubuntu-adjustment/) | [GitHub](https://github.com/samwhelp/ubuntu-adjustment) |
+| [debian-iso-builder-template](https://samwhelp.github.io/debian-iso-builder-template/) | [GitHub](https://github.com/samwhelp/debian-iso-builder-template) |
+| [Debian Adjustment](https://samwhelp.github.io/debian-adjustment/) | [GitHub](https://github.com/samwhelp/debian-adjustment) |
 
 
 
