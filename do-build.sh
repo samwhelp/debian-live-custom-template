@@ -69,8 +69,8 @@ export DEBIAN_FRONTEND=noninteractive
 ## Option
 ################################################################################
 
-TARGET_DEBIAN_CODENAME="resolute"
-TARGET_DEBIAN_MIRROR="http://archive.ubuntu.com/ubuntu"
+TARGET_DEBIAN_CODENAME="trixie"
+TARGET_DEBIAN_MIRROR="http://deb.debian.org/debian"
 TARGET_ARCH="amd64"
 TARGET_NAME="ubuntu"
 TARGET_BUSINESS_NAME="Ubuntu"
