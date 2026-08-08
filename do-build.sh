@@ -1198,9 +1198,7 @@ function live_debianlive_config_install () {
 	local target_hostname="\${TARGET_HOSTNAME}"
 
 
-	##
-	## https://git.launchpad.net/ubuntu/+source/casper/tree/casper.conf
-	##
+
 
 cat << __EOF__ | tee /etc/casper.conf > /dev/null 2>&1
 # This file should go in /etc/casper.conf
@@ -1835,7 +1833,7 @@ function sys_construct_isodir () {
 
 	local distro_iso_dir_path="${DISTRO_ISO_DIR_PATH}"
 
-	mkdir -p "${distro_iso_dir_path}/casper"
+	mkdir -p "${distro_iso_dir_path}/live"
 	mkdir -p "${distro_iso_dir_path}/boot/grub"
 	mkdir -p "${distro_iso_dir_path}/.disk"
 
@@ -1979,11 +1977,11 @@ function sys_copy_system_kernel_to_isodir () {
 
 	echo "==== copy system kernel to iso ===="
 
-	echo cp -f "${distro_img_dir_path}/boot/vmlinuz-${kernel_version}" "${distro_iso_dir_path}/casper/vmlinuz"
-	cp -f "${distro_img_dir_path}/boot/vmlinuz-${kernel_version}" "${distro_iso_dir_path}/casper/vmlinuz"
+	echo cp -f "${distro_img_dir_path}/boot/vmlinuz-${kernel_version}" "${distro_iso_dir_path}/live/vmlinuz"
+	cp -f "${distro_img_dir_path}/boot/vmlinuz-${kernel_version}" "${distro_iso_dir_path}/live/vmlinuz"
 
-	echo cp -f "${distro_img_dir_path}/boot/initrd.img-${kernel_version}" "${distro_iso_dir_path}/casper/initrd"
-	cp -f "${distro_img_dir_path}/boot/initrd.img-${kernel_version}" "${distro_iso_dir_path}/casper/initrd"
+	echo cp -f "${distro_img_dir_path}/boot/initrd.img-${kernel_version}" "${distro_iso_dir_path}/live/initrd"
+	cp -f "${distro_img_dir_path}/boot/initrd.img-${kernel_version}" "${distro_iso_dir_path}/live/initrd"
 
 }
 
@@ -2016,9 +2014,9 @@ function sys_archive_systemdir_to_squashfs () {
 	local distro_img_dir_path="${DISTRO_IMG_DIR_PATH}"
 	local distro_iso_dir_path="${DISTRO_ISO_DIR_PATH}"
 
-	##mksquashfs "${distro_img_dir_path}" "${distro_iso_dir_path}/casper/filesystem.squashfs" -comp xz -b 1M -noappend
+	##mksquashfs "${distro_img_dir_path}" "${distro_iso_dir_path}/live/filesystem.squashfs" -comp xz -b 1M -noappend
 
-	mksquashfs "${distro_img_dir_path}" "${distro_iso_dir_path}/casper/filesystem.squashfs" \
+	mksquashfs "${distro_img_dir_path}" "${distro_iso_dir_path}/live/filesystem.squashfs" \
 		-noappend -no-duplicates -no-recovery \
 		-wildcards -b 1M \
 		-comp zstd -Xcompression-level 19 \
@@ -2042,7 +2040,7 @@ function sys_create_filesystem_size_to_isodir () {
 	local distro_img_dir_path="${DISTRO_IMG_DIR_PATH}"
 	local distro_iso_dir_path="${DISTRO_ISO_DIR_PATH}"
 
-	printf "%s" "$(du -sx --block-size=1 "${distro_img_dir_path}" | cut -f1)" | tee "${distro_iso_dir_path}/casper/filesystem.size" > /dev/null
+	printf "%s" "$(du -sx --block-size=1 "${distro_img_dir_path}" | cut -f1)" | tee "${distro_iso_dir_path}/live/filesystem.size" > /dev/null
 
 }
 
@@ -2260,8 +2258,8 @@ insmod gfxterm
 
 menuentry "${target_business_name} ${target_build_version} (${target_arch})" {
 	set gfxpayload=keep
-	linux /casper/vmlinuz boot=casper nopersistent ---
-	initrd /casper/initrd
+	linux /live/vmlinuz boot=live nopersistent ---
+	initrd /live/initrd
 }
 
 __EOF__
@@ -2475,7 +2473,7 @@ function sys_create_filesystem_manifest_to_isodir () {
 	local distro_iso_dir_path="${DISTRO_ISO_DIR_PATH}"
 
 	chroot "${distro_img_dir_path}" dpkg-query -W --showformat='${Package} ${Version}\n' \
-		> "${distro_iso_dir_path}/casper/filesystem.manifest"
+		> "${distro_iso_dir_path}/live/filesystem.manifest"
 
 }
 
@@ -2489,13 +2487,13 @@ function sys_create_filesystem_manifest_desktop_to_isodir () {
 
 	local distro_iso_dir_path="${DISTRO_ISO_DIR_PATH}"
 
-	if ! [ -e "${distro_iso_dir_path}/casper/filesystem.manifest" ]; then
+	if ! [ -e "${distro_iso_dir_path}/live/filesystem.manifest" ]; then
 		return 0
 	fi
 
-	cp -f "${distro_iso_dir_path}/casper/filesystem.manifest" "${distro_iso_dir_path}/casper/filesystem.manifest-desktop"
+	cp -f "${distro_iso_dir_path}/live/filesystem.manifest" "${distro_iso_dir_path}/live/filesystem.manifest-desktop"
 
-	sed -i -E '/(casper|ubiquity|live|calamares|cloud-init)/Id' "${distro_iso_dir_path}/casper/filesystem.manifest-desktop" || true
+	sed -i -E '/(casper|ubiquity|live|calamares|cloud-init)/Id' "${distro_iso_dir_path}/live/filesystem.manifest-desktop" || true
 
 }
 
