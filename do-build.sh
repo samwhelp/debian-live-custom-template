@@ -203,7 +203,7 @@ DISTRO_ISO_DIR_PATH="${WORK_DIR_PATH}/iso"
 
 ##
 ## * plan / tmp / work / distro.iso
-## * plan / tmp / dist / ubuntu-26.04-amd64-20260805-201314.iso
+## * plan / tmp / dist / debian-13-amd64-20260805-201314.iso
 ##
 
 TIME_STRING_FOR_ISO_NAME="$(date '+%Y%m%d-%H%M%S')"
