@@ -1163,7 +1163,6 @@ function core_bootloader_package_install () {
 	local run_cmd="apt-get install -y --install-recommends
 		os-prober
 		grub-common
-		grub-gfxpayload-lists
 		grub-pc
 		grub-pc-bin
 		grub2-common
