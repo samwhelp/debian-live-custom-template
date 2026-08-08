@@ -1771,7 +1771,7 @@ function sys_create_core_system () {
 	local run_cmd="debootstrap
 		--arch=${target_arch}
 		--variant=minbase
-		--components=main,universe,restricted,multiverse
+		--components=main
 		--include=ca-certificates,openssl,console-setup-linux,console-setup,locales,tzdata,whiptail,wget,dbus,gnupg
 		${target_debian_codename}
 		${distro_img_dir_path}
