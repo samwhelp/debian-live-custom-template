@@ -1164,10 +1164,10 @@ function core_bootloader_package_install () {
 ## ## Module / Casper
 ##
 
-function live_casper_package_install () {
+function live_debianlive_package_install () {
 
 	echo "################################################################################"
-	echo "## [Worker] live_casper_package_install"
+	echo "## [Worker] live_debianlive_package_install"
 	echo "################################################################################"
 
 	echo "==== install casper as live boot system ===="
@@ -1185,10 +1185,10 @@ function live_casper_package_install () {
 
 }
 
-function live_casper_config_install () {
+function live_debianlive_config_install () {
 
 	echo "################################################################################"
-	echo "## [Worker] live_casper_config_install"
+	echo "## [Worker] live_debianlive_config_install"
 	echo "################################################################################"
 
 	echo "==== config /etc/casper.conf ===="
@@ -1633,8 +1633,8 @@ function model_do_fulfill_scripts () {
 	core_bootloader_package_install
 
 
-	live_casper_package_install
-	live_casper_config_install
+	live_debianlive_package_install
+	live_debianlive_config_install
 
 
 	base_network_package_install
