@@ -840,7 +840,7 @@ function base_locale_init_locales () {
 	local target_init_locales="\${TARGET_INIT_LOCALES}"
 	local target_list_locales="\$(sys_locale_load_list_from_str "\${target_init_locales}")"
 
-	echo -n "\${target_list_locales}" | tee -a "/etc/locale.gen" > /dev/null 2>&1
+	echo "\${target_list_locales}" | tee -a "/etc/locale.gen" > /dev/null 2>&1
 
 	echo locale-gen
 	locale-gen
