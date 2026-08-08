@@ -1213,6 +1213,9 @@ function live_debianlive_config_install () {
 	local target_hostname="\${TARGET_HOSTNAME}"
 
 
+	mkdir -p "/etc/live/config.config.d"
+
+
 	echo "==== config /etc/live/config.config.d/hostname.conf ===="
 
 cat << __EOF__ | tee /etc/live/config.config.d/hostname.conf > /dev/null 2>&1
