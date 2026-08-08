@@ -69,8 +69,8 @@ export DEBIAN_FRONTEND=noninteractive
 ## Option
 ################################################################################
 
-TARGET_UBUNTU_CODENAME="resolute"
-TARGET_UBUNTU_MIRROR="http://archive.ubuntu.com/ubuntu"
+TARGET_DEBIAN_CODENAME="resolute"
+TARGET_DEBIAN_MIRROR="http://archive.ubuntu.com/ubuntu"
 TARGET_ARCH="amd64"
 TARGET_NAME="ubuntu"
 TARGET_BUSINESS_NAME="Ubuntu"
@@ -209,7 +209,7 @@ DISTRO_ISO_DIR_PATH="${WORK_DIR_PATH}/iso"
 TIME_STRING_FOR_ISO_NAME="$(date '+%Y%m%d-%H%M%S')"
 
 ## upper case
-ISO_VOLID="UBUNTU"
+ISO_VOLID="DEBIAN"
 
 ISO_OUT_FILE_MAIN_NAME="distro"
 ISO_OUT_FILE_EXT_NAME="iso"
@@ -676,8 +676,8 @@ export DEBIAN_FRONTEND=noninteractive
 ## ## Option
 ##
 
-TARGET_UBUNTU_CODENAME="${TARGET_UBUNTU_CODENAME}"
-TARGET_UBUNTU_MIRROR="${TARGET_UBUNTU_MIRROR}"
+TARGET_DEBIAN_CODENAME="${TARGET_DEBIAN_CODENAME}"
+TARGET_DEBIAN_MIRROR="${TARGET_DEBIAN_MIRROR}"
 TARGET_ARCH="${TARGET_ARCH}"
 TARGET_NAME="${TARGET_NAME}"
 TARGET_BUSINESS_NAME="${TARGET_BUSINESS_NAME}"
@@ -713,8 +713,8 @@ function core_var_dump () {
 	## ## Target
 	##
 
-	echo "TARGET_UBUNTU_CODENAME=\${TARGET_UBUNTU_CODENAME}"
-	echo "TARGET_UBUNTU_MIRROR=\${TARGET_UBUNTU_MIRROR}"
+	echo "TARGET_DEBIAN_CODENAME=\${TARGET_DEBIAN_CODENAME}"
+	echo "TARGET_DEBIAN_MIRROR=\${TARGET_DEBIAN_MIRROR}"
 	echo "TARGET_ARCH=\${TARGET_ARCH}"
 	echo "TARGET_NAME=\${TARGET_NAME}"
 	echo "TARGET_BUSINESS_NAME=\${TARGET_BUSINESS_NAME}"
@@ -746,8 +746,8 @@ function core_var_export () {
 	## ## Target
 	##
 
-	export TARGET_UBUNTU_CODENAME
-	export TARGET_UBUNTU_MIRROR
+	export TARGET_DEBIAN_CODENAME
+	export TARGET_DEBIAN_MIRROR
 	export TARGET_ARCH
 	export TARGET_NAME
 	export TARGET_BUSINESS_NAME
@@ -986,8 +986,8 @@ function sys_apt_sources_config_for_ubuntu () {
 
 	echo "==== config apt soruces list using DEB822 format: /etc/apt/sources.list.d/ubuntu.sources ===="
 
-	local target_ubuntu_codename="\${TARGET_UBUNTU_CODENAME}"
-	local target_ubuntu_mirror="\${TARGET_UBUNTU_MIRROR}"
+	local target_ubuntu_codename="\${TARGET_DEBIAN_CODENAME}"
+	local target_ubuntu_mirror="\${TARGET_DEBIAN_MIRROR}"
 
 
 	if [ -f "/etc/apt/sources.list" ]; then
@@ -1762,9 +1762,9 @@ function sys_create_core_system () {
 	echo "==== create core system via debootstrap ===="
 
 	local target_arch="${TARGET_ARCH}"
-	local target_ubuntu_codename="${TARGET_UBUNTU_CODENAME}"
+	local target_ubuntu_codename="${TARGET_DEBIAN_CODENAME}"
 	local distro_img_dir_path="${DISTRO_IMG_DIR_PATH}"
-	local target_ubuntu_mirror="${TARGET_UBUNTU_MIRROR}"
+	local target_ubuntu_mirror="${TARGET_DEBIAN_MIRROR}"
 	local debootstrap_script_file_path="${DEBOOTSTRAP_SCRIPT_FILE_PATH}"
 
 
