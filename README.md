@@ -30,8 +30,6 @@
 | [debian-live-custom-respin-base](https://github.com/samwhelp/debian-live-custom-respin-base) |
 | [debian-live-custom-respin-xfce](https://github.com/samwhelp/debian-live-custom-respin-xfce) |
 | [debian-live-custom-respin-kde-plasma](https://github.com/samwhelp/debian-live-custom-respin-kde-plasma) |
-| [debian-live-custom-respin-cinnamon](https://github.com/samwhelp/debian-live-custom-respin-cinnamon) |
-| [debian-live-custom-respin-mate](https://github.com/samwhelp/debian-live-custom-respin-mate) |
 
 
 
