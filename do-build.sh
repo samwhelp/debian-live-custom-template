@@ -1014,7 +1014,7 @@ Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
 Types: deb
-URIs: \${target_debian_mirror}
+URIs: \${target_debian_mirror}-security
 Suites: \${target_debian_codename}-security
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
