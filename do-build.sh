@@ -1189,7 +1189,7 @@ function live_debianlive_config_install () {
 	echo "## [Worker] live_debianlive_config_install"
 	echo "################################################################################"
 
-	echo "==== config /etc/casper.conf ===="
+	echo "==== config /etc/live/config.config.d/ ===="
 
 	local target_name="\${TARGET_NAME}"
 	local target_business_name="\${TARGET_BUSINESS_NAME}"
