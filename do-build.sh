@@ -1172,7 +1172,7 @@ function live_debianlive_package_install () {
 
 	echo "==== install live-boot and live-config as live boot system ===="
 
-	local run_cmd="apt-get install -y --no-install-recommends
+	local run_cmd="apt-get install -y --install-recommends
 		live-boot
 		live-config
 		live-config-systemd
