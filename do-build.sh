@@ -1196,24 +1196,112 @@ function live_debianlive_config_install () {
 	local target_hostname="\${TARGET_HOSTNAME}"
 
 
+	echo "==== config /etc/live/config.config.d/hostname.conf ===="
+
+cat << __EOF__ | tee /etc/live/config.config.d/hostname.conf > /dev/null 2>&1
 
 
-cat << __EOF__ | tee /etc/casper.conf > /dev/null 2>&1
-# This file should go in /etc/casper.conf
-# Supported variables are:
-# USERNAME, USERFULLNAME, HOST, BUILD_SYSTEM, FLAVOUR
+################################################################################
+##
+## /etc/live/config.conf.d/hostname.conf
+##
+################################################################################
 
-export USERNAME="live"
-export USERFULLNAME="\${target_business_name} Live session user"
-export HOST="\${target_hostname}"
-export BUILD_SYSTEM="Ubuntu"
 
-# USERNAME and HOSTNAME as specified above won't be honoured and will be set to
-# flavour string acquired at boot time, unless you set FLAVOUR to any
-# non-empty string.
 
-export FLAVOUR="\${target_business_name}"
+
+################################################################################
+### Head: Hostname
+##
+
+
+##
+## $ man live-config
+## $ man lb_config
+##
+
+LIVE_HOSTNAME="\${target_hostname}"
+
+
+##
+### Tail: Hostname
+################################################################################
+
 __EOF__
+
+
+	echo "==== config /etc/live/config.config.d/locale.conf ===="
+
+cat << __EOF__ | tee /etc/live/config.config.d/locale.conf > /dev/null 2>&1
+
+
+################################################################################
+##
+## /etc/live/config.conf.d/locale.conf
+##
+################################################################################
+
+
+
+
+################################################################################
+### Head: Locale
+##
+
+
+##
+## $ man live-config
+## $ man lb_config
+##
+
+LIVE_LOCALES=en_US.UTF-8,zh_TW.UTF-8,zh_CN.UTF-8,zh_HK.UTF-8,ja_JP.UTF-8,ko_KR.UTF-8
+
+
+LIVE_TIMEZONE=Asia/Taipei
+
+
+##
+### Tail: Locale
+################################################################################
+
+__EOF__
+
+
+	echo "==== config /etc/live/config.config.d/user.conf ===="
+
+cat << __EOF__ | tee /etc/live/config.config.d/user.conf > /dev/null 2>&1
+
+
+################################################################################
+##
+## /etc/live/config.conf.d/user.conf
+##
+################################################################################
+
+
+
+
+################################################################################
+### Head: User
+##
+
+
+##
+## $ man live-config
+## $ man lb_config
+##
+
+LIVE_USERNAME="live"
+LIVE_USER_FULLNAME="\${target_business_name} Live User"
+LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth fuse"
+
+
+##
+### Tail: User
+################################################################################
+
+__EOF__
+
 
 }
 
