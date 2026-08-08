@@ -1161,7 +1161,7 @@ function core_bootloader_package_install () {
 
 
 ##
-## ## Module / Casper
+## ## Module / Debian Live Boot
 ##
 
 function live_debianlive_package_install () {
