@@ -1062,6 +1062,7 @@ function core_systemd_package_install () {
 
 	local run_cmd="apt-get install -y --install-recommends
 		systemd-sysv
+		libterm-readline-gnu-perl
 	"
 
 	echo \${run_cmd}
